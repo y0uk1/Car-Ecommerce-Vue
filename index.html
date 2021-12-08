@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Car Ecommerce</title>
+</head>
+<body>
+  <div class="container mt-5" id="app">
+    <div class="d-flex">
+      <div class="mx-2">
+        <select v-model="category" class="form-select" aria-label="Default select example">
+          <option disabled value="">Category</option>
+          <option value="">All</option>
+          <option>Tesla</option>
+          <option>Porsche</option>
+          <option>Toyota</option>
+          <option>Honda</option>
+          <option>Mazda</option>
+          <option>Mercedes-Benz</option>
+          <option>Lexus</option>
+          <option>Lamborghini</option>
+          <option>Audi</option>
+          <option>BMW</option>
+        </select>
+      </div>
+      <div>
+        <select v-model="sortType" class="form-select" aria-label="Default select example">
+          <option disabled value="">Sort by:</option>
+          <option value="1">Price: Low to High</option>
+          <option value="2">Price: High to Low</option>
+          <option value="3">Newest Arrivals</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="d-flex flex-wrap pt-4">
+      <item-card
+        v-for="item in filterItems"
+        v-bind:key="item.id"
+        v-bind:item="item"
+      ></item-card>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+  <script src="script.js"></script>
+</body>
+</html>
